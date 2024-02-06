@@ -16,6 +16,16 @@ public class ProductRepository {
         return product;
     }
 
+    public Product edit(String productName, int productQuantity) {
+        for (Product product: productData) {
+            if (product.getProductName() != null && product.getProductName().equals(productName)) {
+                product.setProductQuantity(productQuantity);
+                return product;
+            }
+        }
+        return null;
+    }
+
     public Iterator<Product> findAll() {
         return productData.iterator();
     }
