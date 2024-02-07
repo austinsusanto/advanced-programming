@@ -50,7 +50,7 @@ public class ProductController {
         return "deleteProduct";
     }
 
-    @PostMapping("/edit")
+    @PostMapping("/delete")
     public String deleteProductPost(@ModelAttribute Product product, Model model) {
         service.delete(product.getProductName());
         return "redirect:list";
