@@ -15,6 +15,6 @@ import java.util.List;
 public class MainController {
     @GetMapping("/")
     public String mainPage(Model model) {
-        return "main";
+        return "homePage";
     }
 }
