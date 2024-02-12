@@ -70,6 +70,30 @@ class ProductRepositoryTest {
     }
 
     @Test
+    void testEditIfNotAvailable() {
+        Product product = new Product();
+        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product.setProductName("Sampo Cap Bambang");
+        product.setProductQuantity(100);
+        productRepository.create(product);
+
+        Product editedProduct = productRepository.edit("Sampo Cap Austin", 50);
+        assertNull(editedProduct);
+    }
+
+    @Test
+    void testDeleteIfNotAvailable() {
+        Product product = new Product();
+        product.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product.setProductName("Sampo Cap Bambang");
+        product.setProductQuantity(100);
+        productRepository.create(product);
+
+        Product deletedProduct = productRepository.delete("Sampo Cap Austin");
+        assertNull(deletedProduct);
+    }
+
+    @Test
     void testFindAllIfEmpty() {
         Iterator<Product> productIterator = productRepository.findAll();
         assertFalse(productIterator.hasNext());
