@@ -16,7 +16,7 @@ class EshopApplicationTests {
 		EshopApplication.main(args);
 
 		// Verify
-		assertEquals(args[0], "test");
+		assertEquals("test", args[0]);
 
 	}
 
