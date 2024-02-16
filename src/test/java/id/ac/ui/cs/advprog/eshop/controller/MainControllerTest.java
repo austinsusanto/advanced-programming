@@ -20,6 +20,6 @@ class MainControllerTest {
         String returnValue = controller.mainPage(model);
 
         // Verify
-        assertEquals(returnValue, "homePage");
+        assertEquals("homePage", returnValue);
     }
 }

@@ -74,7 +74,7 @@ class ProductServiceImplTest {
         List<Product> productList = service.findAll();
 
         // Verify
-        assertEquals(productList.size(), 0);
+        assertEquals(0, productList.size());
     }
 
     @Test
@@ -94,7 +94,7 @@ class ProductServiceImplTest {
 
         // Verify
         List<Product> productList = service.findAll();
-        assertEquals(productList.size(), 2);
+        assertEquals(2, productList.size());
 
         Product savedProduct = productList.get(0);
         assertEquals(savedProduct, product1);

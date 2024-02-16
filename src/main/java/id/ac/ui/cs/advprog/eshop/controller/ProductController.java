@@ -15,7 +15,6 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-    @Autowired
     private ProductService service = new ProductServiceImpl();
 
     @GetMapping("/create")

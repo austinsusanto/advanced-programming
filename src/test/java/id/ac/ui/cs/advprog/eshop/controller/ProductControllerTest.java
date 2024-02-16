@@ -22,7 +22,7 @@ class ProductControllerTest {
         String returnValue = controller.createProductPage(model);
 
         // Verify
-        assertEquals(returnValue, "createProduct");
+        assertEquals("createProduct", returnValue);
     }
 
     @Test
@@ -32,7 +32,7 @@ class ProductControllerTest {
         String returnValue = controller.createProductPost(product, model);
 
         // Verify
-        assertEquals(returnValue, "redirect:list");
+        assertEquals("redirect:list", returnValue);
     }
 
     @Test
@@ -41,7 +41,7 @@ class ProductControllerTest {
         String returnValue = controller.editProductPage(model);
 
         // Verify
-        assertEquals(returnValue, "editProduct");
+        assertEquals("editProduct", returnValue);
     }
 
     @Test
@@ -51,7 +51,7 @@ class ProductControllerTest {
         String returnValue = controller.editProductPost(product, model);
 
         // Verify
-        assertEquals(returnValue, "redirect:list");
+        assertEquals("redirect:list", returnValue);
     }
 
     @Test
@@ -60,7 +60,7 @@ class ProductControllerTest {
         String returnValue = controller.deleteProductPage(model);
 
         // Verify
-        assertEquals(returnValue, "deleteProduct");
+        assertEquals("deleteProduct", returnValue);
     }
 
     @Test
@@ -70,7 +70,7 @@ class ProductControllerTest {
         String returnValue = controller.deleteProductPost(product, model);
 
         // Verify
-        assertEquals(returnValue, "redirect:list");
+        assertEquals("redirect:list", returnValue);
     }
 
     @Test
@@ -79,7 +79,7 @@ class ProductControllerTest {
         String returnValue = controller.productListPage(model);
 
         // Verify
-        assertEquals(returnValue, "productList");
+        assertEquals("productList", returnValue);
     }
 
 }
