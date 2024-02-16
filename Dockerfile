@@ -23,4 +23,4 @@ ENTRYPOINT [ \
     "java" \
 ]
 
-CMD ["jar", "app.jar"]
+CMD ["-jar", "app.jar"]
