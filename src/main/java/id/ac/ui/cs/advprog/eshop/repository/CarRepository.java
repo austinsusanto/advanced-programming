@@ -42,4 +42,7 @@ public class CarRepository {
         }
         return null; // Handle the case where the car is not found
     }
+    public void delete(String id) {
+        carData.removeIf(car -> car.getCarId().equals(id));
+    }
 }
