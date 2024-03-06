@@ -24,3 +24,11 @@ I also need to learn more about the MVC system used in the Java Springboot becau
    On fixing these kinds of issues, it is important to stay patient and fix issues calmly so that the simple problem doesn't turn into a bigger problem.
 2. The current workflows meets the definition of Continuous Integration and Continuous Deployment. It is because the workflows used automatically deploys the new features which are added to the repository.
    Although it meets the definition, it still has much room for improvement that can be implemented including failed deployment handling and others.
+
+## Reflection 4
+1. From the SOLID principles, I applied the SRP or Single Responsibility Principle. This principle helps the regulation of code inside the project. With this principle, code fixing and bug locating can be done easily
+   and minimize the possibility of code crashes.
+2. The SOLID principles helps to code and developing a program in every aspect. For example, if a project has some problem in it, it could be easily detected and located which helps the developer. Also, when a new feature in the project
+   wants to be added, it can be written easily without making problems in other part of the code.
+3. Without the SOLID principles, the codes inside the program will be hard to understand, maintain, and won't be flexible. For example, inside this project, it would be hard to locate which function in the controller is making a problem.
+   This problem will also grow along with the size of the code. So the bigger the program, the bigger the problem.
