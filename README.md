@@ -6,7 +6,7 @@ In this tutorial, I have applied the coding standards such as:
 * Using functions to reduce repetitive codes
 * Using proper and consistent indentation throughout the code
 
-Eventhough theres not much problem in going through this tutorial, I still take a lot of time to get comfortable with the newly learned Java Springboot framework. 
+Eventhough there's not much problem in going through this tutorial, I still take a lot of time to get comfortable with the newly learned Java Springboot framework. 
 There are probably still some minor problem with the usage of the framework. To improve this, I probably need some more time to adjust my self with the framework system. 
 I also need to learn more about the MVC system used in the Java Springboot because it is a new system for me compared to the MVT.
 
@@ -18,3 +18,9 @@ I also need to learn more about the MVC system used in the Java Springboot becau
 2. Making a new Java class with the same setup procedures and instance variables genarally reduces the overall quality of the code. This is because it creates multiple codes with the same objectives.
    This approach could possibly result in some issues involving difficult development proccess due to similar or duplicate codes. It would be better to make include the new class into the old one with better segmentation.
    With that, we can reduce the duplication of code and make a cleaner and tidier development environment.
+
+## Reflection 3
+1. Most of the quality issues fixed in my code are related to code writing consistency and code usage. The fixes aren't complex and I only need to change and tidy up some messy code.
+   On fixing these kinds of issues, it is important to stay patient and fix issues calmly so that the simple problem doesn't turn into a bigger problem.
+2. The current workflows meets the definition of Continuous Integration and Continuous Deployment. It is because the workflows used automatically deploys the new features which are added to the repository.
+   Although it meets the definition, it still has much room for improvement that can be implemented including failed deployment handling and others.

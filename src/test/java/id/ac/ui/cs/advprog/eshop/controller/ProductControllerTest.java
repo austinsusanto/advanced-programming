@@ -1,19 +1,31 @@
 package id.ac.ui.cs.advprog.eshop.controller;
 
 import id.ac.ui.cs.advprog.eshop.model.Product;
+import id.ac.ui.cs.advprog.eshop.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.ui.ConcurrentModel;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
 
-import static org.junit.jupiter.api.Assertions.*;
-class ProductControllerTest {
+import java.util.ArrayList;
+import java.util.List;
 
-    final private ProductController controller = new ProductController();
-    private Model model = new ConcurrentModel();
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+class ProductControllerTest {
+    @Mock
+    private ProductService service;
+    @Mock
+    private Model model;
+    @InjectMocks
+    private ProductController controller;
 
     @BeforeEach
-    void setup() {
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
@@ -22,7 +34,7 @@ class ProductControllerTest {
         String returnValue = controller.createProductPage(model);
 
         // Verify
-        assertEquals("createProduct", returnValue);
+        assertEquals("CreateProduct", returnValue);
     }
 
     @Test
@@ -41,7 +53,7 @@ class ProductControllerTest {
         String returnValue = controller.editProductPage(model);
 
         // Verify
-        assertEquals("editProduct", returnValue);
+        assertEquals("EditProduct", returnValue);
     }
 
     @Test
@@ -60,7 +72,7 @@ class ProductControllerTest {
         String returnValue = controller.deleteProductPage(model);
 
         // Verify
-        assertEquals("deleteProduct", returnValue);
+        assertEquals("DeleteProduct", returnValue);
     }
 
     @Test
@@ -79,7 +91,7 @@ class ProductControllerTest {
         String returnValue = controller.productListPage(model);
 
         // Verify
-        assertEquals("productList", returnValue);
+        assertEquals("ProductList", returnValue);
     }
 
 }
