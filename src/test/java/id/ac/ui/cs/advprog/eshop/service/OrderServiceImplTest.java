@@ -1,5 +1,6 @@
 package id.ac.ui.cs.advprog.eshop.service;
 
+import enums.OrderStatus;
 import id.ac.ui.cs.advprog.eshop.model.Order;
 import id.ac.ui.cs.advprog.eshop.model.Product;
 import id.ac.ui.cs.advprog.eshop.repository.OrderRepository;
@@ -13,9 +14,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -49,10 +50,10 @@ public class OrderServiceImplTest {
     @Test
     void testCreateOrder() {
         Order order = orders.get(1);
-        doReturn(order).when(orderRepository.save(order));
+        doReturn(order).when(orderRepository).save(order);
 
         Order result = orderService.createOrder(order);
-        verify(orderRepository, times(1).save(order));
+        verify(orderRepository, times(1)).save(order);
         assertEquals(order.getId(), result.getId());
     }
 
