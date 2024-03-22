@@ -17,20 +17,24 @@ public class Payment {
 
     public Payment(String id, String method, String status, Map<String, String> paymentData) {
         this.id = id;
-        this.method = method;
+        this.paymentData = paymentData;
+        setStatus(status);
+        setMethod(method);
+    }
 
+    public void setStatus(String status) {
         if (PaymentStatus.contains(status)) {
             this.status = status;
         } else {
             throw new IllegalArgumentException();
         }
+    }
 
+    public void setMethod(String method) {
         if (PaymentMethod.contains(method)) {
-            this.paymentData = paymentData;
+            this.method = method;
         } else {
             throw new IllegalArgumentException();
         }
-
     }
-
 }
