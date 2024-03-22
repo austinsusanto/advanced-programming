@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PaymentTest {
     private Map<String, String> paymentData;
@@ -20,13 +21,42 @@ public class PaymentTest {
     @Test
     void testCreateValidPayment() {
         paymentData.put("voucherCode", "ESHOP1234ABC5678");
-        Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b",
+        Payment payment = new Payment(
+                "13652556-012a-4c07-b546-54eb1396d79b",
                 PaymentMethod.VOUCHER.getValue(),
                 PaymentStatus.SUCCESS.getValue(),
-                paymentData);
+                paymentData
+        );
 
         assertEquals(PaymentStatus.SUCCESS.getValue(), payment.getStatus());
         assertEquals(PaymentMethod.VOUCHER.getValue(), payment.getMethod());
     }
 
+    @Test
+    void testCreateInvalidPaymentStatus() {
+        paymentData.put("voucherCode", "ESHOP1234ABC5678");
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            Payment payment = new Payment(
+                    "13652556-012a-4c07-b546-54eb1396d79b",
+                    PaymentMethod.VOUCHER.getValue(),
+                    "--INVALID PAYMENT STATUS--",
+                    paymentData
+            );
+        });
+    }
+
+    @Test
+    void testCreateInvalidPaymentMethod() {
+        paymentData.put("voucherCode", "ESHOP1234ABC5678");
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            Payment payment = new Payment(
+                    "13652556-012a-4c07-b546-54eb1396d79b",
+                    "--INVALID PAYMENT METHOD--",
+                    PaymentStatus.SUCCESS.getValue(),
+                    paymentData
+            );
+        });
+    }
 }
