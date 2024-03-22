@@ -7,7 +7,15 @@ import java.util.List;
 
 public class PaymentRepository {
     private List<Payment> paymentData = new ArrayList<>();
-    public Payment save(Payment payment) {return null;}
+    public Payment save(Payment payment) {
+        if (this.findById(payment.getId()) != null) {
+            paymentData.remove(this.findById(payment.getId()));
+        }
+
+        paymentData.add(payment);
+
+        return payment;
+    }
     public Payment findById(String id) {return null;}
     public List<Payment> findAll() {return null;}
 }
