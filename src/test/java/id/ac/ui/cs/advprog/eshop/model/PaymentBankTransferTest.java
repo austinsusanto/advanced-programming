@@ -29,7 +29,7 @@ public class PaymentBankTransferTest {
                 paymentData
         );
 
-        payment.setPaymentData(this.paymentData);
+        payment.setPaymentData(paymentData);
         assertEquals(PaymentStatus.SUCCESS.getValue(), payment.getStatus());
     }
 }

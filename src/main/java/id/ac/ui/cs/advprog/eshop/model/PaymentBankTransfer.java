@@ -20,20 +20,13 @@ public class PaymentBankTransfer extends Payment{
         }
 
         this.paymentData = paymentData;
-        String voucherCode = paymentData.get("bankName");
-        int voucherCodeLength = voucherCode.length();
+        String bankName = paymentData.get("bankName");
+        String referenceCode = paymentData.get("referenceCode");
 
-        int numCount = 0;
-        for (int i = 0; i < voucherCodeLength; i++) {
-            if (Character.isDigit(voucherCode.charAt(i))) {
-                numCount++;
-            }
-        }
-
-        if (voucherCodeLength == 16 && voucherCode.startsWith("ESHOP") && numCount == 8) {
-            this.status = PaymentStatus.SUCCESS.getValue();
-        } else {
+        if (bankName == null || referenceCode == null || bankName.isEmpty() || referenceCode.isEmpty()) {
             this.status = PaymentStatus.REJECTED.getValue();
+        } else {
+            this.status = PaymentStatus.SUCCESS.getValue();
         }
     }
 }
