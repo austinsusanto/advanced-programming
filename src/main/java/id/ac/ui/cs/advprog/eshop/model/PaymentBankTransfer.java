@@ -4,12 +4,12 @@ import enums.PaymentStatus;
 
 import java.util.Map;
 
-public class PaymentVoucher extends Payment{
-    public PaymentVoucher(String id, String method, String status, Map<String, String> paymentData) {
+public class PaymentBankTransfer extends Payment{
+    public PaymentBankTransfer(String id, String method, String status, Map<String, String> paymentData) {
         super(id, method, status, paymentData);
     }
 
-    public PaymentVoucher(String id, String method, Map<String, String> paymentData) {
+    public PaymentBankTransfer(String id, String method, Map<String, String> paymentData) {
         super(id, method, PaymentStatus.PENDING.getValue(), paymentData);
     }
 
@@ -20,7 +20,7 @@ public class PaymentVoucher extends Payment{
         }
 
         this.paymentData = paymentData;
-        String voucherCode = paymentData.get("voucherCode");
+        String voucherCode = paymentData.get("bankName");
         int voucherCodeLength = voucherCode.length();
 
         int numCount = 0;
