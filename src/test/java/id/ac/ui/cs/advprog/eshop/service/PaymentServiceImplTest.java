@@ -47,7 +47,7 @@ public class PaymentServiceImplTest {
         products.add(product);
 
         order = new Order(
-                "13652556-012a-4c07-b546-54eb1396d79b",
+                "ORDER 1",
                 products,
                 1708560000L,
                 "Austin Susanto"
@@ -55,11 +55,22 @@ public class PaymentServiceImplTest {
 
         voucherPaymentData = new HashMap<>();
         voucherPaymentData.put("voucherCode", "ESHOP1234567890A");
-        Payment payment1 = new Payment("PAYMENT 1", PaymentMethod.VOUCHER.getValue(), PaymentStatus.SUCCESS.getValue(), voucherPaymentData);
+        Payment payment1 = new Payment(
+                "ORDER 1",
+                PaymentMethod.VOUCHER.getValue(),
+                PaymentStatus.SUCCESS.getValue(),
+                voucherPaymentData
+        );
+
         bankPaymentData = new HashMap<>();
         bankPaymentData.put("bankName", "Bank Universitas Indonesia");
         bankPaymentData.put("referenceCode", "12345");
-        Payment payment2 = new Payment("PAYMENT 2", PaymentMethod.TRANSFER.getValue(), PaymentStatus.SUCCESS.getValue(), bankPaymentData);
+        Payment payment2 = new Payment(
+                "PAYMENT 2",
+                PaymentMethod.TRANSFER.getValue(),
+                PaymentStatus.SUCCESS.getValue(),
+                bankPaymentData
+        );
 
         payments.add(payment1);
         payments.add(payment2);

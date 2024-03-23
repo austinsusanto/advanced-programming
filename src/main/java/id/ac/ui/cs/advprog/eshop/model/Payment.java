@@ -24,6 +24,10 @@ public class Payment {
         setMethod(method);
     }
 
+    public Payment(String id, String method, Map<String, String> paymentData) {
+        this(id, method, PaymentStatus.PENDING.getValue(), paymentData);
+    }
+
     public void setStatus(String status) {
         if (PaymentStatus.contains(status)) {
             this.status = status;
