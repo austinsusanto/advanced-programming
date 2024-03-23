@@ -21,7 +21,7 @@ public class PaymentVoucherTest {
 
     @Test
     void testCreateValidPaymentData() {
-        paymentData.put("voucherCode", "ESHOP1234567890A");
+        paymentData.put("voucherCode", "ESHOP12345678ABC");
         PaymentVoucher payment = new PaymentVoucher(
                 "13652556-012a-4c07-b546-54eb1396d79b",
                 PaymentMethod.VOUCHER.getValue(),
